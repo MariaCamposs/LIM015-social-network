@@ -14,9 +14,16 @@
   font-size: 14px;
   margin: 0;
 }
+
 a{
   text-decoration: none;
+  cursor: pointer;
+  color: var(--color-secondary);
 }
+a:hover {
+  color: var(--color-main);
+}
+
 /* Components */
 .desktop-logo{
   display: none;
@@ -30,6 +37,14 @@ a{
 }
 .formText{
   color: var(--color-secondary);
+  max-width: 300px;
+  text-align: center;
+}
+.formText-bold{
+  font-weight: 700;
+}
+.formText-medium{
+  font-size: 18px;
 }
 .formBox{
   margin-top: 20px;
@@ -66,6 +81,7 @@ a{
   border: 0;
   color: #ffffff;
   font-size: 17px;
+  cursor: pointer;
 }
 .formButton:hover{
   background: #fff;
@@ -75,19 +91,7 @@ a{
   transition: 0.3s;
 }
 /*--------------------Login---------------------*/
-.loginSection, .signUpSection{
-  flex-basis: 100%;
-}
-.loginForm, .signUpForm{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.loginForm .formText{
-  margin-top: 20px;
-}
-/*--------------------SIGN UP----------------------*/
-.signUpContainer, .loginContainer{
+.signUpContainer, .loginContainer, .resetPasswordContainer{
   background: url(./img/backgroung-mobile.svg) no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
@@ -95,6 +99,39 @@ a{
   align-items: center;
   overflow-x: hidden;
 }
+.loginSection, .signUpSection, .resetPasswordSection{
+  flex-basis: 100%;
+}
+.loginForm, .signUpForm, .resetPasswordForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loginForm .formText, .resetPasswordForm .formText{
+  margin-top: 20px;
+}
+/*-------------------- RESET PASSWORD----------------------*/
+.resetPasswordContainer .desktop-logo{
+  display: block;
+  width: 200px;
+}
+.resetPasswordContainer{
+  background-image: url(./img/resetBackground.svg);
+}
+.resetPasswordContainer .formBox{
+  border: 1px solid var(--color-main);
+}
+.resetPasswordContainer .formBox:focus{
+  border: 1px solid var(--color-secondary);
+}
+.resetPasswordContainer .icon{
+  margin: 5px;
+  height: 70px;
+}
+.resetPasswordForm .formText.formText-medium{
+  margin-top: 5px;
+}
+/*--------------------SIGN UP----------------------*/
 .checkbox{
   min-width: 319px;
   display: flex;
@@ -107,7 +144,6 @@ a{
   font-size: 13px;
   padding-top: 3px;
 }
-
 .container-checkBox{
   display: block;
   position: relative;
@@ -124,8 +160,6 @@ a{
   position: absolute;
   opacity: 0;
   cursor: pointer;
-  height: 0;
-  width: 0;
 }
 .checkmark {
   position: absolute;
@@ -140,16 +174,10 @@ a{
 .container-checkBox:hover input ~ .checkmark {
   background-color: var(--color-gray);
 }
-.container-checkBox input:checked ~ .checkmark {
-  background-color: var(--color-main);
-}
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
-}
-.container-checkBox input:checked ~ .checkmark:after {
-  display: block;
 }
 .container-checkBox .checkmark:after {
   left: 6px;
@@ -162,6 +190,12 @@ a{
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+.container-checkBox input:checked ~ .checkmark {
+  background-color: var(--color-main);
+}
+.container-checkBox input:checked ~ .checkmark:after {
+  display: block;
+}
 
 /* validation forms */
 .formText.question, .formText b{
@@ -171,17 +205,88 @@ a{
 .formText b{
   padding-left: 5px;
 }
-
+/* Modals */
+.modal {
+  position: fixed; /* Stay in place */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  display: flex;
+}
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 1.5rem;
+  border: 1px solid #888;
+  width: 80%;
+  height: max-content;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.close {
+  color: var(--color-gray);
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: var(--color-secondary);
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-header {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  color: var(--color-main);
+  padding-top: 10px;
+}
+.modal-header h2{
+  padding-top: 5px;
+  font-size: 20px;
+}
+.modal-body {
+  padding: 20px 0;
+  width: 100%;
+}
+.modal-body .modalEmail{
+  color: var(--color-secondary);
+}
+.modal-footer {
+  padding: 0px 16px 20px;
+  color: var(--color-secondary)
+}
+.modal-redirect:hover {
+  cursor: pointer;
+  color: var(--color-main);
+}
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+@media only screen and (min-width: 600px){
+  /* Modals */
+  .modal-content {
+    width: 50%;
+  }
+}
 @media only screen and (min-width: 1200px){
-  .loginSection, .signUpSection{
+  .loginSection, .signUpSection, .resetPasswordSection{
     flex-basis: 50%;
   }
-  .signUpContainer, .loginContainer{
-    justify-content: flex-end;
-  }
-  .signUpContainer, .loginContainer{
+  .signUpContainer, .loginContainer, .resetPasswordContainer{
     background: url(./img/background.png) no-repeat center center fixed;
     background-size: cover;
+    justify-content: flex-end;
   }
   .mobil-logo{
     display: none;
@@ -194,6 +299,10 @@ a{
   }
   .formBox:focus{
     border: 1px solid var(--color-secondary);
+  }
+  /*modals*/
+  .modal-content {
+    width: 30%;
   }
 }
 
