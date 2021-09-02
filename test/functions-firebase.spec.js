@@ -11,11 +11,14 @@ import {
 const firebaseMock = require('firebase-mock');
 
 const mockauth = new firebaseMock.MockAuthentication();
+const mockfirestore = new firebaseMock.MockFirestore();
 mockauth.autoFlush();
+mockfirestore.autoFlush();
 
 global.firebase = new firebaseMock.MockFirebaseSdk(
   () => null,
   () => mockauth,
+  () => mockfirestore,
 );
 
 const users = {
