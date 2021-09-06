@@ -269,8 +269,15 @@ a:hover {
   cursor: pointer;
   color: var(--color-main);
 }
-/*footer mobile*/
-.footerMobile{
+/*profile*/
+.profile{
+  background: var(--color-main);
+}
+#mainImgProfile{
+  height: 10%;
+}
+/*footer*/
+.mobileFooter{
   background: var(--color-main);
   max-height: 72px;
   width: 100%;
