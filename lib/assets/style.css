@@ -281,7 +281,7 @@ h2{
   position: fixed;
   top:0;
   width: 100%;
-  height: 35%;
+  height: 360px;
   z-index: 100;
   padding-bottom: 15px;
   border-bottom: 1px solid var(--color-gray);
@@ -289,6 +289,17 @@ h2{
 .headerProfile{
   height: 50%;
   width: 100%;
+}
+.petNameDesktop{
+  display: none;
+  position: absolute;
+  top:310px;
+}
+.petNameMobile, .petNameDesktop{
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 30px;
+  color: black;
 }
 .mainImgProfile{
   object-fit: cover;
@@ -312,7 +323,7 @@ h2{
 .circleContent{
   position: relative;
   right: 22px;
-  top: -50px;
+  top: -60px;
   z-index: 1;
   display: flex;
   justify-content: flex-end;
@@ -333,23 +344,19 @@ h2{
   width:95%;
   border-radius: 100%;
 }
-.profileDscription{
+.profileDescription{
   position: relative;
   top:10px;
   padding: 0 18px;
-  display: grid;
-  row-gap: 5px;
-}
-.profileDscription h1{
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 30px;
-  color: black;
+  width: 60%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .followSection{
   display: flex;
   justify-content: space-between;
-  padding-right: 120px;
 }
 .textProfile{
   font-weight: normal;
@@ -364,12 +371,18 @@ h2{
   font-size: 20px;
   line-height: 21px;
 }
+.profileDescriptionBox{
+  padding-top: 10px;
+}
+.profileDescription .formButton{
+  display:none;
+}
 .mainProfile{
   height: 100%;
   padding: 0 18px 60px;
   position: absolute;
   width: 100%;
-  padding-top:290px;
+  padding-top:380px;
 }
 .posts{
   width: 100%;
@@ -377,6 +390,7 @@ h2{
   display: grid;
   row-gap: 20px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 .post{
   height: 100%;
@@ -391,13 +405,14 @@ h2{
   overflow-x: hidden;
   display: flex; 
   flex-direction: column;
+  padding-top: 20px;
 }
 .profileForm{
   display: flex;
   justify-content: center;
   display: grid;
   grid-gap: 10px;
-  padding: 0px 0 100px; 
+  padding: 0px 20px 100px; 
   width: 100%;
 }
 .formProfileBox{
@@ -447,11 +462,15 @@ h2{
   align-items: center;
 }
 .coverPhotoContent{
-  width: 100%; 
+  width: 100%;
+  height: 250px;
 }
 .photoSection.cover{
   flex-direction: column;
   justify-content: center;
+}
+.coverPhotoContent img{
+  border-radius: 0 0 30px 30px;
 }
 .buttonProfile{
   display: flex;
@@ -484,7 +503,7 @@ h2{
   height: 43px;
 }
 
-/*footer navMobile*/
+/*---------------------footer navMobile---------------*/
 .navMobile { 
   display: flex;
   justify-content: space-evenly;
@@ -508,11 +527,48 @@ h2{
 .icon.menu{
   height: 30px;
 }
+/*-------------------------header desktop--------------------*/
+.desktopHeader{
+  display: none;
+  position: fixed;
+  top: 0;
+  background: var(--color-main);
+  width: 100%;
+  height: 90px;
+  z-index: 0;
+}
+.headerBox{
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+.navDesktop{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.icon-header{
+  width: 50px;
+}
+/*-----------------------Footer desktop ------------------------*/
+.desktopFooter{
+  background-color: white;
+  display: none;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  color: var(--color-gray);
+  padding: 0 0 10px 5%;
+}
+/*-------------------------header desktop--------------------*/
+
 @media only screen and (min-width: 480px){
   .mainProfile{
-    padding-top: 300px;
+    /* padding-top: 300px; */
   }
-
 }
 @keyframes animatetop {
   from {top: -300px; opacity: 0}
@@ -563,25 +619,95 @@ h2{
   .formBox:focus{
     border: 1px solid var(--color-secondary);
   }
-  /*modals*/
+  /*-------------------------modals---------------*/
   .modal-content {
     width: 30%;
   }
-   /*profile*/
+   /*-------------------------header desktop--------------------*/
+  .desktopHeader{
+    display: block;
+  }
+   /*-------------------profile----------------*/
+  .profile .header{
+     padding-top: 90px;
+     padding-bottom: 0px;
+     position: relative;
+     border: 0;
+  }
+  .headerProfile{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: min-content;
+  }
+  .mainImgProfile{
+    border-radius: 0 0 30px 30px;
+    object-fit: cover;
+    height: 200px;
+    width: 70%;
+  }
+  .headerProfile .icon{
+    display: none;
+  }
+  .petNameDesktop{
+    display: block;
+  }
+  .petNameMobile{
+    display: none;
+  }
+  .profileDescription{
+    padding-left: 10%;
+    top:400px;
+    width: 30%;
+  }
+  .profileDescription{
+    padding-left: 10%;
+    top:340px;
+    width: 30%;
+  }
+  .profileDescription .formButton{
+    display:block;
+    width: 110px !important;
+    text-align: center;
+  }
+  .circleContent{
+    top:-90px;
+  }
+  .mainProfile{
+    position: fixed;
+    top:440px;
+    padding: 0 15% 0 30%;
+    width: 100%;
+  }
   .circle{
     width: 200px;
     height: 200px;
   }
+  /*---------------------footer mobile----------------*/
+  .profile .navMobile { 
+    display: none;
+  } 
+  .editProfile .navMobile { 
+    display: none;
+  } 
   /*----------------editProfile--------------*/
   .profileForm{
-    padding-right: 20%;
-    padding-left: 20%;
+    padding: 90px 20% 50px
   }
   .inputProfile{
     border: 0;
   }
   .inputProfile:focus{
     border: 1px solid var(--color-main);
+  }
+  /*-----------------------Footer desktop ------------------------*/
+  .profile .desktopFooter{
+    display: block;
+  }
+  .editProfile .desktopFooter{
+    display: block;
+    text-align: center;
   }
 }
 
