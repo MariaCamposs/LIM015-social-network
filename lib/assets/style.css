@@ -7,6 +7,7 @@
   --color-yellow: rgba(242, 195, 53, 1);
   --color-light-yellow: rgba(242, 205, 92, 1);
   --color-gray: rgba(161, 165, 172, 1);
+  --color-black-transparent: rgba(0, 0, 0, 0.4);
 }
 
 *{
@@ -273,7 +274,126 @@ h2{
   cursor: pointer;
   color: var(--color-main);
 }
-/*---------------------------profile-------------------*/
+.postIcon-yellow{
+  color: var(--color-main);
+}
+/* ----------------Inicio---------------- */
+.home{
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-evenly;
+}
+.post{
+  padding: 0.2rem 1rem;
+  max-width: 500px;
+}
+.postHeader{
+  display: flex;
+  justify-content: space-between;
+}
+.postAuthor, .userFollow, .userToFollow{
+  display: flex;
+  gap: 0.5rem;
+}
+.userFollow{
+  justify-content: space-between;
+  max-width: 400px;
+  padding: 0rem 1rem;
+}
+.photoProfile, .userPhotoToFollow{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+.postOthers, .userOthersToFollow{
+  color: var(--color-black-transparent);
+}
+.postContent{
+  margin: 1rem 0rem;
+}
+.postPhoto{
+  width: 100%;
+}
+.postDescription{
+  margin-top: 0.2rem;
+}
+.postFooter{
+  display: flex;
+  gap: 1rem;
+  color: var(--color-black-transparent);
+}
+.postInline{
+  display: inline-flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+.postIcon:hover{
+  color: var(--color-secondary);
+  fill: var(--color-secondary);
+}
+/* --------- User Profile -------------- */
+.homePhotoProfile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.userPhotoBackground {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.userPhoto{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  position: absolute;
+  top: 50px;
+  border-radius: 50%;
+}
+.userDescription{
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+.userOthers{
+  color: var(--color-black-transparent);
+}
+.userName, .userOther{
+  font-weight: 400;
+}
+/* --------- User Follow -------------- */
+.usersToFollow{
+  display: grid;
+  row-gap: 20px;
+}
+.userFollow{
+  justify-content: space-between;
+  padding: 0.2rem 1rem;
+  max-width: 600px;
+}
+.buttonFollow{
+  color: #fff;
+  background-color: var(--color-secondary);
+  border-radius: 30px;
+  padding: 0rem 1rem;
+  border: 0px;
+}
+.buttonFollow:hover{
+  background-color: var(--color-main);
+  transition: 0.2s ease;
+}
+.suggestionSubtitle{
+  color: var(--color-black-transparent);
+  font-size: 18px;
+  font-weight: 400;
+}
+.followContainer{
+  display: none;
+}
+/* -----------------------------Profile-------------------------- */
 .profile{
   background: white;
 }
@@ -386,15 +506,9 @@ h2{
 }
 .posts{
   width: 100%;
-  height: 100%;
+  min-height: 80vh;
   display: grid;
   row-gap: 20px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-.post{
-  height: 100%;
-  width: 90%;
 }
 
 /*------------------------Edit Profile----------------------*/
@@ -418,6 +532,7 @@ h2{
   margin:0;
   height: 100%;
 }
+
 .profileLabel{
   display: flex;
   flex-direction: column;
@@ -502,7 +617,7 @@ h2{
 }
 
 /*---------------------footer navMobile---------------*/
-.navMobile { 
+.navMobile {
   display: flex;
   justify-content: space-evenly;
   position: fixed;
@@ -511,7 +626,7 @@ h2{
   bottom: 0;
   width: 100%;
   border-radius: 30px 30px 0 0;
-} 
+}
 .navMobile a {
   float: left;
   display: block;
@@ -587,6 +702,12 @@ h2{
     justify-content: normal;
     padding-right: 15%;
     padding-left: 15%;
+  }
+}
+@media only screen and (min-width: 768px){
+  .followContainer{
+    display: block;
+    max-width: 400px;
   }
 }
 @media only screen and (min-width: 1200px){
@@ -666,10 +787,11 @@ h2{
     padding: 0 15% 0 30%;
     width: 100%;
   }
+  /* profile
   .circle{
     width: 200px;
     height: 200px;
-  }
+  } */
   /*---------------------footer mobile----------------*/
   .profile .navMobile { 
     display: none;
