@@ -271,20 +271,159 @@ a:hover {
 }
 /*profile*/
 .profile{
-  background: var(--color-main);
+  background: white;
 }
-#mainImgProfile{
-  height: 10%;
-}
-/*footer*/
-.mobileFooter{
-  background: var(--color-main);
-  max-height: 72px;
+.profile .header{
+  position: fixed;
+  top:0;
   width: 100%;
+  height: 35%;
+  z-index: 100;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--color-gray);
+}
+.headerProfile{
+  height: 50%;
+  width: 100%;
+}
+.mainImgProfile{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.headerProfile .icon{
   position: absolute;
-  bottom:0;
+  top: 20px;
+  color: var(--color-gray);
+  z-index: 1;
+}
+.icon.pen{
+  left: 20px;
+  top: 39px;
+}
+.icon.signOut{
+  right: 20px;
+  top: 39px;
+}
+.circleContent{
+  position: relative;
+  right: 22px;
+  top: -50px;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.circle{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle img{
+  object-fit: cover;
+  height: 95%;
+  width:95%;
+  border-radius: 100%;
+}
+.profileDscription{
+  position: relative;
+  top:10px;
+  padding: 0 18px;
+  display: grid;
+  row-gap: 5px;
+}
+.profileDscription h1{
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 30px;
+  color: black;
+}
+.followSection{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 120px;
+}
+.textProfile{
+  font-weight: normal;
+  line-height: 18px;
+}
+.profileNumbers{
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 21px;
+}
+.followSection .textProfile{
+  font-size: 13px;
+  color: var(--color-gray);
+}
+.mainProfile{
+  height: 100%;
+  padding: 0 18px 60px;
+  position: absolute;
+  width: 100%;
+  padding-top:290px;
+}
+.posts{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  row-gap: 20px;
+  overflow-y: scroll;
+}
+.post{
+  height: 100%;
+  width: 90%;
 }
 
+/*header mobile*/
+.mobileHeader{
+  position: fixed;
+  height: 75px;
+  top: 0;
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mobileHeader img{
+  width: 235px;
+  height: 43px;
+}
+/*footer navMobile*/
+.navMobile { 
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed;
+  overflow: hidden;
+  background-color: var(--color-main);
+  bottom: 0;
+  width: 100%;
+  border-radius: 30px 30px 0 0;
+} 
+.navMobile a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  cursor: pointer;
+}
+.icon.menu{
+  height: 30px;
+}
+@media only screen and (min-width: 480px){
+  .mainProfile{
+    padding-top: 300px;
+  }
+
+}
 @keyframes animatetop {
   from {top: -300px; opacity: 0}
   to {top: 0; opacity: 1}
@@ -293,6 +432,20 @@ a:hover {
   /* Modals */
   .modal-content {
     width: 50%;
+  }
+  /*profile*/
+  .circleContent{
+    justify-content: center;
+    right: 0px;
+  }
+  .circle{
+    width: 150px;
+    height: 150px;
+  }
+  .followSection{
+    padding-right: 360px;
+  }
+  .mainProfile{
   }
 }
 @media only screen and (min-width: 1200px){
@@ -319,6 +472,13 @@ a:hover {
   /*modals*/
   .modal-content {
     width: 30%;
+  }
+   /*profile*/
+  .circle{
+    width: 200px;
+    height: 200px;
+  }
+  .mainProfile{
   }
 }
 
