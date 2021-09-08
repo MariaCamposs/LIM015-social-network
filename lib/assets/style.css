@@ -541,12 +541,8 @@ ul{
   background: white;
 }
 .profile .header{
-  position: fixed;
-  top:0;
   width: 100%;
-  height: 48%;
-  z-index: 100;
-  padding-bottom: 10px;
+  height: 200px;
   border-bottom: 1px solid var(--color-gray);
 }
 
@@ -562,10 +558,10 @@ ul{
 .petNameDesktop{
   display: none;
   position: absolute;
-  top:310px;
+  top:250px;
 }
 .petNameMobile, .petNameDesktop{
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   line-height: 30px;
   color: black;
@@ -615,13 +611,9 @@ ul{
 }
 .profileDescription{
   position: relative;
-  top:10px;
-  padding: 0 18px;
-  width: 70%;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 0 0 0 18px;
+  width: 50%;
+  height: 30%;
 }
 .followSection{
   display: flex;
@@ -629,7 +621,8 @@ ul{
 }
 .textProfile{
   font-weight: normal;
-  line-height: 18px;
+  line-height: 13px;
+  font-size: 11px;
 }
 .followSection .textProfile{
   font-size: 13px;
@@ -637,8 +630,8 @@ ul{
 }
 .profileNumbers{
   font-weight: bold;
-  font-size: 20px;
-  line-height: 21px;
+  font-size: 15px;
+  line-height: 15px;
 }
 .profileDescriptionBox{
   padding-top: 3px;
@@ -648,19 +641,10 @@ ul{
 }
 .mainProfile{
   height: 100%;
-  padding: 0 18px 60px;
+  padding: 10px 18px 60px;
   position: absolute;
   width: 100%;
-  padding-top:231px;
 }
-.posts{
-  width: 100%;
-  min-height: 80vh;
-  display: grid;
-  row-gap: 20px;
-  justify-content: center;
-}
-
 /*------------------------Edit Profile----------------------*/
 .editProfile{
   width: 100%;
@@ -669,7 +653,6 @@ ul{
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
 }
 .profileForm{
   display: grid;
@@ -767,6 +750,7 @@ ul{
 
 /*---------------------footer navMobile---------------*/
 .navMobile {
+  right: 0;
   display: flex;
   justify-content: space-evenly;
   position: fixed;
@@ -797,8 +781,8 @@ ul{
   top: 0;
   background: var(--color-main);
   width: 100%;
-  height: 90px;
-  z-index: 1;
+  height: 80px;
+  z-index: 0;
 }
 .headerBox{
   display: flex;
@@ -954,9 +938,9 @@ ul{
   }
    /*-------------------profile----------------*/
   .profile .header{
-     padding-top: 80px;
      padding-bottom: 0px;
      position: relative;
+     top:80px;
      border: 0;
   }
   .headerProfile{
@@ -964,7 +948,7 @@ ul{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: min-content;
+    height: 290px;
   }
   .mainImgProfile{
     border-radius: 0 0 30px 30px;
@@ -982,8 +966,9 @@ ul{
     display: none;
   }
   .profileDescription{
-    padding-left: 10%;
-    top:340px;
+    position: fixed;
+    padding-left: 15%;
+    top:379px;
     width: 30%;
   }
   .profileDescription .formButton{
@@ -996,9 +981,11 @@ ul{
   }
   .mainProfile{
     position: fixed;
-    top:440px;
-    padding: 0 15% 0 30%;
-    width: 100%;
+    top:371px;
+    left: 40%;
+  }
+  .profilePosts{
+    overflow-y: scroll;
   }
   /* profile
   .circle{
@@ -1014,7 +1001,7 @@ ul{
   }
   /*----------------editProfile--------------*/
   .profileForm{
-    padding: 90px 20% 50px
+    padding: 80px 20% 50px
   }
   .inputProfile{
     border: 0;
