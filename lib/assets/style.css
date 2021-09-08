@@ -293,7 +293,6 @@ a:hover {
 .first-section-form{
   display: flex;
   flex-direction: column;
-  gap: 5px;
 }
 .second-section-form{
   align-items: center;
@@ -312,36 +311,32 @@ label.createPostSection{
   flex-direction: row;
   color: rgba(0, 0, 0, 0.38);
 }
-#inputPost{
+.inputPost{
   background-color: var(--color-transparent-brown);
   width: 90%;
   height: 9.438rem;
   margin: 1.375rem 1.125rem 0.438rem;
-  padding: 0.875rem 8.375rem 7.438rem 1rem;
+  padding: 1rem;
   border-radius: 21px;
   border-style: none;
 }
-#inputUbication{
+#count{
+  color: rgba(0, 0, 0, 0.38);
+  transform: translateX(240px);
+  width: 30%;
+}
+#inputUbication, #inputNamePet{
   background-color: var(--color-transparent-brown);
   width: 75%;
   height: 2.25rem;
   margin: 0 0 0 1.125rem;
-  padding: 0.563rem 11.25rem 0.563rem 1.188rem;
+  padding: 0.5rem;
   border-radius: 21px;
   border-style: none;
-  margin-bottom: 10px;
+  margin-top: -10px;
   transform: translate(50px);
 }
-#inputNamePet{
-  background-color: var(--color-transparent-brown);
-  width: 75%;
-  height: 2.25rem;
-  margin: 0 0 0 1.125rem;
-  padding: 0.25rem 10.125rem 0.5rem 1rem;
-  border-radius: 21px;
-  border-style: none;
-  transform: translate(50px);
-}
+
 input.file {
   position: relative;
   text-align: right;
@@ -383,7 +378,7 @@ ul{
 }
 .ai-location, .sharp-pet{
   color: var(--color-main);
-  transform: translate(20px, 35px);
+  transform: translate(20px, 20px);
   width: 28px;
 }
 
@@ -393,6 +388,15 @@ ul{
 }
 #mainImgProfile{
   height: 10%;
+}
+/* header mobile*/
+.mobileHeader{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.mobil-logo-post{
+  width: 75%;
 }
 /*footer*/
 .mobileFooter{
@@ -497,6 +501,7 @@ ul{
   }
   #inputUbication, #inputNamePet{
   width: 80%;
+  margin-top: -10px;
   transform: translate(40px);
   }
 }
