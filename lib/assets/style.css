@@ -509,6 +509,7 @@ h2{
   min-height: 80vh;
   display: grid;
   row-gap: 20px;
+  justify-content: center;
 }
 
 /*------------------------Edit Profile----------------------*/
