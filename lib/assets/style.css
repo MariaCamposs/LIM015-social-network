@@ -17,12 +17,12 @@
   margin: 0;
 }
 
-a{
+.linkLogin{
   text-decoration: none;
   cursor: pointer;
   color: var(--color-secondary);
 }
-a:hover {
+.linkLogin:hover {
   color: var(--color-main);
 }
 h2{
@@ -44,6 +44,9 @@ h2{
   color: var(--color-secondary);
   max-width: 300px;
   text-align: center;
+}
+#loginReset{
+  margin-top: 20px;
 }
 .formText-bold{
   font-weight: 700;
@@ -94,6 +97,12 @@ h2{
   border: 1px solid var(--color-main);
   box-shadow: 0px 0px 5px var(--color-main);
   transition: 0.3s;
+}
+.icon.google{
+  color: var(--color-secondary);
+}
+.icon.google:hover{
+  color: var(--color-main);
 }
 /*--------------------Login---------------------*/
 .signUpContainer, .loginContainer, .resetPasswordContainer{
@@ -303,6 +312,7 @@ h2{
   align-items: center;
   display: flex;
   flex-direction: column;
+  padding-bottom: 20%;
 }
 label.createPostSection{
   background-color: var(--color-main);
@@ -464,6 +474,7 @@ ul{
   position: absolute;
   top: 50px;
   border-radius: 50%;
+  border: 1px solid #fff;
 }
 .userDescription{
   text-align: center;
@@ -516,15 +527,6 @@ ul{
   border-bottom: 1px solid var(--color-gray);
 }
 
-/* header mobile*/
-.mobileHeader{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.mobil-logo-post{
-  width: 75%;
-}
 /*footer*/
 .mobileFooter{
   background: var(--color-main);
@@ -630,13 +632,13 @@ ul{
   height: 100%;
   margin: 0;
   overflow-x: hidden;
-  display: flex; 
+  display: flex;
   flex-direction: column;
 }
 .profileForm{
   display: grid;
   grid-gap: 10px;
-  padding: 0px 20px 100px; 
+  padding: 0px 20px 100px;
   width: 100%;
 }
 .formProfileBox{
@@ -714,7 +716,6 @@ ul{
 
 /*-------------------------header mobile--------------------*/
 .mobileHeader{
-  position: fixed;
   height: 75px;
   top: 0;
   width: 100%;
@@ -739,6 +740,7 @@ ul{
   bottom: 0;
   width: 100%;
   border-radius: 30px 30px 0 0;
+  right: 0;
 }
 .navMobile a {
   float: left;
@@ -858,6 +860,7 @@ ul{
     background-color: var(--color-main);
     color: #fff;
     width: 100%;
+    height: 80px;
   }
   label.createPostSection{
     font-size: 1.5rem;
@@ -972,12 +975,12 @@ ul{
     height: 200px;
   } */
   /*---------------------footer mobile----------------*/
-  .profile .navMobile { 
+  .profile .navMobile {
     display: none;
-  } 
-  .editProfile .navMobile { 
+  }
+  .editProfile .navMobile {
     display: none;
-  } 
+  }
   /*----------------editProfile--------------*/
   .profileForm{
     padding: 80px 20% 50px
