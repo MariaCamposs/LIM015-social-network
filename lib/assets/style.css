@@ -35,7 +35,7 @@ h2{
 }
 .icon{
   font-size: 28px;
-  color: var(--color-secondary);
+  color: #fff;
 }
 .icon-gray{
   color: var(--color-gray);
@@ -274,9 +274,118 @@ h2{
   cursor: pointer;
   color: var(--color-main);
 }
-.postIcon-yellow{
-  color: var(--color-main);
+/* ----------- create post ----------- */
+.createPostContainer{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
+.createPostSection{
+  width: 100%;
+}
+.desktopHeader{
+  display: none;
+}
+#close{
+  display: none;
+}
+.pet-desktop{
+  display: none;
+}
+.postForm{
+  display: grid;
+}
+.first-section-form{
+  display: flex;
+  flex-direction: column;
+}
+.second-section-form{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+label.createPostSection{
+  background-color: var(--color-main);
+  width: 100%;
+  height: 2.5rem;
+  margin: 0 0 1.438rem;
+  padding: 1.625rem 12.438rem 3rem 1.25rem;
+  color: #fff;
+}
+.privacyIcons{
+  flex-direction: row;
+  color: rgba(0, 0, 0, 0.38);
+}
+.inputPost{
+  background-color: var(--color-transparent-brown);
+  width: 90%;
+  height: 9.438rem;
+  margin: 1.375rem 1.125rem 0.438rem;
+  padding: 1rem;
+  border-radius: 21px;
+  border-style: none;
+}
+#count{
+  color: rgba(0, 0, 0, 0.38);
+  transform: translateX(240px);
+  width: 30%;
+}
+#inputUbication, #inputNamePet{
+  background-color: var(--color-transparent-brown);
+  width: 75%;
+  height: 2.25rem;
+  margin: 0 0 0 1.125rem;
+  padding: 0.5rem;
+  border-radius: 21px;
+  border-style: none;
+  margin-top: -10px;
+  transform: translate(50px);
+}
+input.file {
+  position: relative;
+  text-align: right;
+  opacity: 0;
+  z-index: 2;
+  width: 0px;
+}
+.imgButton{
+  width: 15rem;
+  height: 2.75rem;
+  flex-grow: 0;
+  margin: 2.059rem 0.625rem 0 0.313rem;
+  padding: 0.625rem 4rem;
+}
+#postButton{
+  width: 15rem;
+  height: 2.75rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  background-color: #bf863f;
+}
+ul{
+  list-style: none;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  gap: 90px;
+  margin: 0 3.505rem 1.688rem 3.5rem;
+  align-items: center;
+  color: white;
+}
+.userName, .privacyIcons{
+  transform: translateX(100px);
+  width: 50%;
+}
+.ai-location, .sharp-pet{
+  color: var(--color-main);
+  transform: translate(20px, 20px);
+  width: 28px;
+}
+
 /* ----------------Inicio---------------- */
 .home{
     display: grid;
@@ -330,6 +439,9 @@ h2{
 .postIcon:hover{
   color: var(--color-secondary);
   fill: var(--color-secondary);
+}
+.postIcon-yellow{
+  color: var(--color-main);
 }
 /* --------- User Profile -------------- */
 .homePhotoProfile{
@@ -394,6 +506,7 @@ h2{
   display: none;
 }
 /* -----------------------------Profile-------------------------- */
+
 .profile{
   background: white;
 }
@@ -405,6 +518,21 @@ h2{
   z-index: 100;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--color-gray);
+}
+
+/* header mobile*/
+.mobileHeader{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.mobil-logo-post{
+  width: 75%;
+}
+/*footer*/
+.mobileFooter{
+  background: var(--color-main);
+  max-height: 72px;
 }
 .headerProfile{
   height: 50%;
@@ -735,6 +863,69 @@ h2{
   /*-------------------------modals---------------*/
   .modal-content {
     width: 30%;
+  }
+
+  /* Header y footer */
+  .mobileFooter, .mobileHeader{
+    display: none;
+  }
+  .desktopHeader{
+    display: block;
+    background-color: var(--color-main);
+    color: #fff;
+    width: 100%;
+  }
+  label.createPostSection{
+    font-size: 1.5rem;
+    padding-top: 3rem;
+    font-weight: bold;
+    text-align: left;
+    background-color:  #fff;
+    color: var(--color-main);
+  }
+  .desktopHeader{
+    display: flex;
+    align-items: center;
+    gap: 40%;
+  }
+  .logo-header{
+    width: 20%;
+    margin-top: -12px;
+    padding-left: 15px;
+    filter: sepia(100%) contrast(100);
+  }
+  .navDesktop{
+    align-items: center;
+    padding-top: 1.6rem;
+  }
+  .createPostSection{
+    width: 60%;
+  }
+  #close{
+    display: block;
+  }
+  .navDesktop.ul{
+    justify-items: right;
+  }
+  .pet-desktop{
+    display: block;
+  }
+  .postForm{
+    display: grid;
+  }
+  .first-section-form{
+    width: 50%;
+  }
+  .second-section-form{
+    width: 30%;
+    justify-self: end;
+    position: absolute;
+    padding-top: 10%;
+  }
+  #inputUbication, #inputNamePet{
+  width: 80%;
+  margin-top: -10px;
+  transform: translate(40px);
   }
    /*-------------------------header desktop--------------------*/
   .desktopHeader{
