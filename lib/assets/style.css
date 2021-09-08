@@ -925,6 +925,7 @@ ul{
   /* ---------------------- Home ---------------------- */
   .home{
     margin-top: 120px;
+    padding-bottom: 75px;
   }
   /*-------------------profile----------------*/
   .profile .header{
