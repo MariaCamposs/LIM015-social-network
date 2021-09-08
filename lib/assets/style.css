@@ -292,9 +292,7 @@ h2{
 .createPostSection{
   width: 100%;
 }
-.desktopHeader{
-  display: none;
-}
+
 #close{
   display: none;
 }
@@ -410,9 +408,9 @@ ul{
 
 /* ----------------Inicio---------------- */
 .home{
-    display: grid;
-    grid-auto-flow: column;
-    justify-content: space-evenly;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-evenly;
 }
 .post{
   padding: 0.2rem 1rem;
@@ -444,6 +442,8 @@ ul{
 }
 .postPhoto{
   width: 100%;
+  max-height: 400px;
+  object-fit: cover;
 }
 .postDescription{
   margin-top: 0.2rem;
@@ -486,7 +486,7 @@ ul{
   position: absolute;
   top: 50px;
   border-radius: 50%;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
 }
 .userHomeDescription{
   text-align: center;
@@ -641,9 +641,7 @@ ul{
 }
 .mainProfile{
   height: 100%;
-  padding: 10px 18px 60px;
-  position: absolute;
-  width: 100%;
+  padding: 10px 18px 100px;
 }
 /*------------------------Edit Profile----------------------*/
 .editProfile{
@@ -777,12 +775,12 @@ ul{
 /*-------------------------header desktop--------------------*/
 .desktopHeader{
   display: none;
-  position: fixed;
-  top: 0;
   background: var(--color-main);
-  width: 100%;
   height: 80px;
-  z-index: 0;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
 }
 .headerBox{
   display: flex;
@@ -792,7 +790,6 @@ ul{
 }
 .navDesktop{
   width: 40%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -837,6 +834,9 @@ ul{
     padding-right: 15%;
     padding-left: 15%;
   }
+  .mainProfile{
+    padding: 20px 5rem 100px;
+  }
 }
 @media only screen and (min-width: 768px){
   .followContainer{
@@ -874,16 +874,6 @@ ul{
   .mobileFooter, .mobileHeader{
     display: none;
   }
-  .desktopHeader{
-    display: block;
-    background-color: var(--color-main);
-    color: #fff;
-    width: 100%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    gap: 40%;
-  }
   label.createPostSection{
     font-size: 1.5rem;
     padding-top: 3rem;
@@ -897,10 +887,6 @@ ul{
     margin-top: -12px;
     padding-left: 15px;
     filter: sepia(100%) contrast(100);
-  }
-  .navDesktop{
-    align-items: center;
-    padding-top: 1.6rem;
   }
   .createPostSection{
     width: 60%;
@@ -932,19 +918,19 @@ ul{
   margin-top: -10px;
   transform: translate(40px);
   }
-   /*-------------------------header desktop--------------------*/
+  /*-------------------------header desktop--------------------*/
   .desktopHeader{
     display: block;
   }
-   /*-------------------profile----------------*/
+  /* ---------------------- Home ---------------------- */
+  .home{
+    margin-top: 120px;
+  }
+  /*-------------------profile----------------*/
   .profile .header{
-     padding-bottom: 0px;
-     position: relative;
-     top:80px;
-     border: 0;
+    border: 0;
   }
   .headerProfile{
-    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -966,9 +952,8 @@ ul{
     display: none;
   }
   .profileDescription{
-    position: fixed;
     padding-left: 15%;
-    top:379px;
+    top: 97px;
     width: 30%;
   }
   .profileDescription .formButton{
@@ -980,9 +965,12 @@ ul{
     top:-90px;
   }
   .mainProfile{
-    position: fixed;
-    top:371px;
+    position: absolute;
+    top: 371px;
     left: 40%;
+    width: 45%;
+    padding-left: 0;
+    padding-right: 0;
   }
   .profilePosts{
     overflow-y: scroll;
@@ -1013,9 +1001,12 @@ ul{
   .profile{
     display: block;
   }
-  .editProfile, .desktopFooter{
+  .editProfile{
     display: block;
-    text-align: center;
+  }
+  .desktopFooter {
+      display: block;
+      text-align: center;
   }
 }
 
