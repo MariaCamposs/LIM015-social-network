@@ -305,6 +305,17 @@ h2{
   flex-direction: column;
   padding-bottom: 20%;
 }
+.photoProfile-post{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(25px, 40px);
+}
 label.createPostSection{
   background-color: var(--color-main);
   width: 100%;
@@ -866,6 +877,9 @@ ul{
     color: #fff;
     width: 100%;
     height: 80px;
+    display: flex;
+    align-items: center;
+    gap: 40%;
   }
   label.createPostSection{
     font-size: 1.5rem;
@@ -874,11 +888,6 @@ ul{
     text-align: left;
     background-color:  #fff;
     color: var(--color-main);
-  }
-  .desktopHeader{
-    display: flex;
-    align-items: center;
-    gap: 40%;
   }
   .logo-header{
     width: 20%;
@@ -912,7 +921,8 @@ ul{
     width: 30%;
     justify-self: end;
     position: absolute;
-    padding-top: 10%;
+    padding-top: 13%;
+  padding-bottom: 0;
   }
   #inputUbication, #inputNamePet{
   width: 80%;
@@ -994,10 +1004,10 @@ ul{
     border: 1px solid var(--color-main);
   }
   /*-----------------------Footer desktop ------------------------*/
-  .profile .desktopFooter{
+  .profile{
     display: block;
   }
-  .editProfile .desktopFooter{
+  .editProfile, .desktopFooter{
     display: block;
     text-align: center;
   }
