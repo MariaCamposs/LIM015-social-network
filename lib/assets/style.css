@@ -386,6 +386,7 @@ ul{
   align-items: center;
   color: white;
 }
+
 .userName, .privacyIcons{
   transform: translateX(100px);
   width: 50%;
@@ -476,16 +477,23 @@ ul{
   border-radius: 50%;
   border: 1px solid #fff;
 }
+.userHomeDescription{
+  text-align: center;
+}
 .userDescription{
   text-align: center;
   margin-top: 60px;
   margin-bottom: 20px;
 }
-.userOthers{
+.userOthers, .userHomeOthers{
   color: var(--color-black-transparent);
 }
-.userName, .userOther{
+.userName, .userHomeName, .userOther, .userHomeOthers{
   font-weight: 400;
+}
+.userHomeDescription{
+  margin-top: 60px;
+  margin-bottom: 20px;
 }
 /* --------- User Follow -------------- */
 .usersToFollow{
