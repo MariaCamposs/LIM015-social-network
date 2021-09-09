@@ -21,6 +21,7 @@
   text-decoration: none;
   cursor: pointer;
   color: var(--color-secondary);
+  margin-top: 20px;
 }
 .linkLogin:hover {
   color: var(--color-main);
@@ -411,6 +412,7 @@ ul{
   display: grid;
   grid-auto-flow: column;
   justify-content: space-evenly;
+  padding-bottom: 80px;
 }
 .post{
   padding: 0.2rem 1rem;
@@ -917,6 +919,7 @@ ul{
   /* ---------------------- Home ---------------------- */
   .home{
     margin-top: 120px;
+    padding-bottom: 75px;
   }
   /*-------------------profile----------------*/
   .profile .header{
