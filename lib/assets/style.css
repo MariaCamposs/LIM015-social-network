@@ -791,11 +791,10 @@ ul{
 .icon-header{
   width: 28px;
 }
-a:hover{
+.active{
   background-color: var(--color-secondary);
   padding: 0.5rem;
   border-radius: 10px;
-  transition: 0.5s;
 }
 /*-----------------------Footer desktop ------------------------*/
 .desktopFooter{
