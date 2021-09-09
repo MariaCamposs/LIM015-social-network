@@ -787,15 +787,18 @@ ul{
   display: flex;
   align-items: center;
   justify-content: space-around;
+  padding: 14px 16px;
+}
+.navDesktop a{
+  padding: 14px 16px;
 }
 .icon-header{
   width: 28px;
 }
-a:hover{
+.active{
   background-color: var(--color-secondary);
   padding: 0.5rem;
-  border-radius: 10px;
-  transition: 0.5s;
+  border-radius: 30px;
 }
 /*-----------------------Footer desktop ------------------------*/
 .desktopFooter{
