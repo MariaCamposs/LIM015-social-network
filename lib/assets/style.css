@@ -529,6 +529,7 @@ ul{
 /* -----------------------------Profile-------------------------- */
 
 .profile{
+  width: 100%;
   background: white;
 }
 .profile .header{
@@ -1004,18 +1005,11 @@ ul{
   }
   
   /*-----------------------Footer desktop ------------------------*/
-  .profile{
-    display: block;
-  }
-  .editProfile{
-    display: block;
-  }
   .desktopFooter {
       display: block;
       text-align: center;
   }
 }
-
 .is-active {
   color: #bb2929;
 }
