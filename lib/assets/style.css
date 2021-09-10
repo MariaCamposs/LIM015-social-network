@@ -968,6 +968,10 @@ ul{
     padding-top: 7%;
     margin-top: 10px;
   }
+  .textProfile {
+    line-height: 20px;
+    font-size: 15px;
+  }
   .followSection .textProfile {
     font-size: 15px;
   }
@@ -1005,10 +1009,7 @@ ul{
   .profileDescriptionBox{
     padding-top: 10px;
   }
-  .textProfile {
-    line-height: 20px;
-    font-size: 15px;
-}
+  
   /*-----------------------Footer desktop ------------------------*/
   .profile{
     display: block;
