@@ -549,7 +549,7 @@ ul{
 .petNameDesktop{
   display: none;
   position: absolute;
-  top:338px;
+  top:380px;
 }
 .petNameMobile, .petNameDesktop{
   font-size: 20px;
@@ -656,12 +656,6 @@ ul{
   padding: 0px 20px 100px;
   width: 100%;
 }
-.formProfileBox{
-  width: 100%;
-  margin:0;
-  height: 100%;
-}
-
 .profileLabel{
   display: flex;
   flex-direction: column;
@@ -669,9 +663,10 @@ ul{
   font-weight: bold;
   padding-top: 5px;
 }
+
 .inputProfile{
   margin-top: 5px;
-  background: var(--color-light-brown-two);
+  background: var(--color-transparent-brown);
   padding: 10px 20px;
 }
 .inputProfile:focus{
@@ -723,7 +718,7 @@ ul{
   font-weight: bold;
 }
 .inputProfilePhoto{
-  background-color: var(--color-light-brown-two);
+  background-color: var(--color-transparent-brown);
   height: 50px;
   border-radius: 30px;
   padding: 15px;
@@ -811,7 +806,6 @@ ul{
   position: fixed;
   bottom: 0;
   color: var(--color-gray);
-  padding: 0 0 10px 5%;
 }
 @keyframes animatetop {
   from {top: -300px; opacity: 0}
@@ -944,7 +938,6 @@ ul{
   .mainImgProfile{
     border-radius: 0 0 30px 30px;
     object-fit: cover;
-    height: 200px;
     width: 70%;
   }
   .headerProfile .icon{
@@ -958,7 +951,7 @@ ul{
   }
   .profileDescription{
     padding-left: 15%;
-    top: 47px;
+    top: 80px;
     width: 32%;
     height: max-content;
   }
@@ -980,7 +973,7 @@ ul{
   }
   .mainProfile{
     position: absolute;
-    top: 395px;
+    top: 440px;
     left: 40%;
     width: 45%;
     padding-left: 0;
