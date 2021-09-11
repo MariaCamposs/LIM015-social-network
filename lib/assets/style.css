@@ -106,7 +106,7 @@ h2{
   color: var(--color-main);
 }
 /*--------------------Login---------------------*/
-.signUpContainer, .loginContainer, .resetPasswordContainer{
+.signUpContainer, .loginContainer, .resetPasswordContainer, .noFoundContainer{
   background: url(./img/backgroung-mobile.svg) no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
@@ -114,8 +114,17 @@ h2{
   align-items: center;
   overflow-x: hidden;
 }
-.loginSection, .signUpSection, .resetPasswordSection{
+.loginSection, .signUpSection, .resetPasswordSection, .noFoundSection{
   flex-basis: 100%;
+}
+.noFoundSection{
+  text-align: center;
+}
+.noFoundTitle{
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-main);
 }
 .loginForm, .signUpForm, .resetPasswordForm{
   display: flex;
@@ -293,10 +302,6 @@ h2{
 .createPostSection{
   width: 100%;
 }
-
-#close{
-  display: none;
-}
 .pet-desktop{
   display: none;
 }
@@ -462,6 +467,30 @@ ul{
 .postIcon-yellow{
   color: var(--color-main);
 }
+.more{
+  position: relative;
+  cursor: pointer;
+}
+.moreActions{
+  position: absolute;
+  top: 100%;
+  right: 0px;
+  background: var(--color-light-brown-two);
+  border-radius: 10px;
+}
+.actions{
+  padding: 1rem;
+  cursor: pointer;
+}
+.actions:hover {
+  background: var(--color-main);
+  border-radius: 10px;
+  color: #fff;
+}
+.iconMore {
+  margin-right: 0.5rem;
+}
+
 /* --------- User Profile -------------- */
 .homePhotoProfile{
   display: flex;
@@ -553,7 +582,7 @@ ul{
 .petNameDesktop{
   display: none;
   position: absolute;
-  top:250px;
+  top:338px;
 }
 .petNameMobile, .petNameDesktop{
   font-size: 20px;
@@ -574,11 +603,11 @@ ul{
 }
 .icon.pen{
   left: 20px;
-  top: 39px;
+  top: 20px;
 }
 .icon.signOut{
   right: 20px;
-  top: 39px;
+  top: 20px;
 }
 .circleContent{
   position: relative;
@@ -637,6 +666,13 @@ ul{
 .mainProfile{
   height: 100%;
   padding: 10px 18px 100px;
+}
+.profilePosts {
+  display: grid;
+  row-gap: 20px;
+}
+.profilePosts .post{
+  max-width: 100%;
 }
 /*------------------------Edit Profile----------------------*/
 .editProfile{
@@ -829,7 +865,7 @@ ul{
     height: 150px;
   }
   .followSection{
-    padding-right: 360px;
+    padding-right: 50%;
   }
   /*----------------editProfile--------------*/
   .profileForm{
@@ -848,10 +884,16 @@ ul{
   }
 }
 @media only screen and (min-width: 1200px){
-  .loginSection, .signUpSection, .resetPasswordSection{
+  .loginSection, .signUpSection, .resetPasswordSection, .noFoundSection{
     flex-basis: 50%;
   }
-  .signUpContainer, .loginContainer, .resetPasswordContainer{
+  .noFoundSection{
+    padding: 8rem;
+  }
+  .noFoundTitle {
+    font-size: 2.5rem;
+  }
+  .signUpContainer, .loginContainer, .resetPasswordContainer, .noFoundContainer{
     background: url(./img/background.png) no-repeat center center fixed;
     background-size: cover;
     justify-content: flex-end;
@@ -894,9 +936,6 @@ ul{
   .createPostSection{
     width: 60%;
   }
-  #close{
-    display: block;
-  }
   .navDesktop.ul{
     justify-items: right;
   }
@@ -933,6 +972,7 @@ ul{
   /*-------------------profile----------------*/
   .profile .header{
     border: 0;
+    margin-top: 80px;
   }
   .headerProfile{
     display: flex;
@@ -957,33 +997,37 @@ ul{
   }
   .profileDescription{
     padding-left: 15%;
-    top: 97px;
-    width: 30%;
+    top: 47px;
+    width: 32%;
+    height: max-content;
   }
   .profileDescription .formButton{
     display:block;
-    width: 110px !important;
     text-align: center;
+    padding-top: 7%;
+    margin-top: 10px;
+  }
+  .textProfile {
+    line-height: 20px;
+    font-size: 15px;
+  }
+  .followSection .textProfile {
+    font-size: 15px;
   }
   .circleContent{
     top:-90px;
   }
   .mainProfile{
     position: absolute;
-    top: 371px;
+    top: 395px;
     left: 40%;
     width: 45%;
     padding-left: 0;
     padding-right: 0;
   }
-  .profilePosts{
-    overflow-y: scroll;
+  .followSection{
+    padding-right: 0;
   }
-  /* profile
-  .circle{
-    width: 200px;
-    height: 200px;
-  } */
   /*---------------------footer mobile----------------*/
   .profile .navMobile {
     display: none;
@@ -1001,6 +1045,10 @@ ul{
   .inputProfile:focus{
     border: 1px solid var(--color-main);
   }
+  .profileDescriptionBox{
+    padding-top: 10px;
+  }
+
   /*-----------------------Footer desktop ------------------------*/
   .profile{
     display: block;
