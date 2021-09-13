@@ -449,6 +449,8 @@ ul{
 }
 .postDescription{
   margin-top: 0.2rem;
+  display: flex;
+  flex-direction: column;
 }
 .postFooter{
   display: flex;
@@ -491,6 +493,46 @@ ul{
   margin-right: 0.5rem;
 }
 
+/* -------- Edit Post ----------- */
+.editDescriptionPost{
+  margin: 0px;
+  resize: none;
+  width: 100%;
+  border: 2px solid transparent;
+}
+.editDescriptionPost:focus{
+  outline: none;
+  border: 2px solid var(--color-main);
+}
+.editDescription{
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.max-characters{
+  align-self: end;
+  margin-top: 10px;
+}
+.inlineEdit{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.cancelDescription{
+  margin-top: 20px;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--color-main);
+  border: 1px solid var(--color-main);
+  font-size: 17px;
+  cursor: pointer;
+  min-width: 200px;
+  height: 58px;
+  transition: 0.2s ease;
+}
+.cancelDescription:hover{
+  background: var(--color-main);
+  color: #fff;
+}
 /* --------- User Profile -------------- */
 .homePhotoProfile{
   display: flex;
