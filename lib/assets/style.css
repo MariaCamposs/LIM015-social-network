@@ -106,7 +106,7 @@ h2{
   color: var(--color-main);
 }
 /*--------------------Login---------------------*/
-.signUpContainer, .loginContainer, .resetPasswordContainer{
+.signUpContainer, .loginContainer, .resetPasswordContainer, .noFoundContainer{
   background: url(./img/backgroung-mobile.svg) no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
@@ -114,8 +114,17 @@ h2{
   align-items: center;
   overflow-x: hidden;
 }
-.loginSection, .signUpSection, .resetPasswordSection{
+.loginSection, .signUpSection, .resetPasswordSection, .noFoundSection{
   flex-basis: 100%;
+}
+.noFoundSection{
+  text-align: center;
+}
+.noFoundTitle{
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-main);
 }
 .loginForm, .signUpForm, .resetPasswordForm{
   display: flex;
@@ -458,6 +467,30 @@ ul{
 .postIcon-yellow{
   color: var(--color-main);
 }
+.more{
+  position: relative;
+  cursor: pointer;
+}
+.moreActions{
+  position: absolute;
+  top: 100%;
+  right: 0px;
+  background: var(--color-light-brown-two);
+  border-radius: 10px;
+}
+.actions{
+  padding: 1rem;
+  cursor: pointer;
+}
+.actions:hover {
+  background: var(--color-main);
+  border-radius: 10px;
+  color: #fff;
+}
+.iconMore {
+  margin-right: 0.5rem;
+}
+
 /* --------- User Profile -------------- */
 .homePhotoProfile{
   display: flex;
@@ -846,10 +879,16 @@ ul{
   }
 }
 @media only screen and (min-width: 1200px){
-  .loginSection, .signUpSection, .resetPasswordSection{
+  .loginSection, .signUpSection, .resetPasswordSection, .noFoundSection{
     flex-basis: 50%;
   }
-  .signUpContainer, .loginContainer, .resetPasswordContainer{
+  .noFoundSection{
+    padding: 8rem;
+  }
+  .noFoundTitle {
+    font-size: 2.5rem;
+  }
+  .signUpContainer, .loginContainer, .resetPasswordContainer, .noFoundContainer{
     background: url(./img/background.png) no-repeat center center fixed;
     background-size: cover;
     justify-content: flex-end;
@@ -1003,7 +1042,7 @@ ul{
   .profileDescriptionBox{
     padding-top: 10px;
   }
-  
+
   /*-----------------------Footer desktop ------------------------*/
   .desktopFooter {
       display: block;
