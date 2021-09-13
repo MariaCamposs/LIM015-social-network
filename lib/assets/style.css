@@ -646,11 +646,11 @@ ul{
 }
 .icon.pen{
   left: 20px;
-  top: 20px;
+  top: 10px;
 }
 .icon.signOut{
   right: 20px;
-  top: 20px;
+  top: 10px;
 }
 .circleContent{
   position: relative;
