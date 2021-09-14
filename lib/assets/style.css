@@ -294,6 +294,10 @@ h2{
   cursor: pointer;
   color: var(--color-main);
 }
+.front{
+  top: 0;
+  z-index: 9;
+}
 /* ----------- create post ----------- */
 .createPostContainer{
   align-items: center;
