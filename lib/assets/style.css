@@ -235,6 +235,7 @@ h2{
   position: fixed; /* Stay in place */
   width: 100%; /* Full width */
   height: 100%; /* Full height */
+  top: 0;
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   display: flex;
 }
@@ -297,6 +298,15 @@ h2{
 .front{
   top: 0;
   z-index: 9;
+}
+.modal-center{
+  margin-top: 20px;
+  width: max-content;
+}
+.buttonLink{
+  padding: 0.7rem;
+  text-decoration: none;
+  cursor: pointer;
 }
 /* ----------- create post ----------- */
 .createPostContainer{
@@ -436,7 +446,7 @@ ul{
 .post{
   max-width: 600px;
   border-radius: 10px;
-  background: var(--color-light-brown-two);
+  background: var(--color-transparent-brown);
   padding: 1rem;
 }
 .postHeader{
