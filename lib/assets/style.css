@@ -824,16 +824,17 @@ ul{
   height: 75px;
   top: 0;
   width: 100%;
-  padding: 10px 0;
+  padding: 10px 1rem;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
-.mobileHeader img{
-  width: 235px;
-  height: 43px;
+.mobileHeader .mobil-logo-post {
+  height: 50px;
+  flex: 1;
 }
-
+.mobileHeader .icon{
+  filter: contrast(0.5);
+}
 /*---------------------footer navMobile---------------*/
 .navMobile {
   right: 0;
