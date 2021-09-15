@@ -1,11 +1,13 @@
 :root{
-  --color-main: rgba(242, 167, 27, 1);
+  --color-main:rgba(242, 167, 27, 1);
   --color-secondary: rgba(191, 134, 63, 1);
   --color-light-brown: rgba(217, 199, 184, 1);
+  --color-light-brown-two: rgba(245, 242, 242, 1);
   --color-transparent-brown: rgba(217, 199, 184, 0.4);
   --color-yellow: rgba(242, 195, 53, 1);
   --color-light-yellow: rgba(242, 205, 92, 1);
   --color-gray: rgba(161, 165, 172, 1);
+  --color-black-transparent: rgba(0, 0, 0, 0.4);
 }
 
 *{
@@ -15,22 +17,26 @@
   margin: 0;
 }
 
-a{
+.linkLogin{
   text-decoration: none;
   cursor: pointer;
   color: var(--color-secondary);
+  margin-top: 20px;
 }
-a:hover {
+.linkLogin:hover {
   color: var(--color-main);
 }
-
+h2{
+  color: var(--color-main);
+  font-size: 18px;
+}
 /* Components */
 .desktop-logo{
   display: none;
 }
 .icon{
   font-size: 28px;
-  color: var(--color-secondary);
+  color: #fff;
 }
 .icon-gray{
   color: var(--color-gray);
@@ -39,6 +45,9 @@ a:hover {
   color: var(--color-secondary);
   max-width: 300px;
   text-align: center;
+}
+#loginReset{
+  margin-top: 20px;
 }
 .formText-bold{
   font-weight: 700;
@@ -90,8 +99,15 @@ a:hover {
   box-shadow: 0px 0px 5px var(--color-main);
   transition: 0.3s;
 }
+.icon.google{
+  color: var(--color-secondary);
+  cursor: pointer;
+}
+.icon.google:hover{
+  color: var(--color-main);
+}
 /*--------------------Login---------------------*/
-.signUpContainer, .loginContainer, .resetPasswordContainer{
+.signUpContainer, .loginContainer, .resetPasswordContainer, .noFoundContainer{
   background: url(./img/backgroung-mobile.svg) no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
@@ -99,8 +115,17 @@ a:hover {
   align-items: center;
   overflow-x: hidden;
 }
-.loginSection, .signUpSection, .resetPasswordSection{
+.loginSection, .signUpSection, .resetPasswordSection, .noFoundSection{
   flex-basis: 100%;
+}
+.noFoundSection{
+  text-align: center;
+}
+.noFoundTitle{
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-main);
 }
 .loginForm, .signUpForm, .resetPasswordForm{
   display: flex;
@@ -210,6 +235,7 @@ a:hover {
   position: fixed; /* Stay in place */
   width: 100%; /* Full width */
   height: 100%; /* Full height */
+  top: 0;
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   display: flex;
 }
@@ -269,6 +295,624 @@ a:hover {
   cursor: pointer;
   color: var(--color-main);
 }
+.front{
+  top: 0;
+  z-index: 9;
+}
+.modal-center{
+  margin-top: 20px;
+  width: max-content;
+}
+.buttonLink{
+  padding: 0.7rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* ----------- create post ----------- */
+.createPostContainer{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.createPostSection{
+  width: 100%;
+}
+.pet-desktop{
+  display: none;
+}
+.postForm{
+  display: grid;
+}
+.first-section-form{
+  display: flex;
+  flex-direction: column;
+}
+.second-section-form{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20%;
+}
+.photoProfile-post{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(25px, 40px);
+}
+label.createPostSection{
+  background-color: var(--color-main);
+  width: 100%;
+  height: 2.5rem;
+  margin: 0 0 1.438rem;
+  padding: 1.625rem 12.438rem 3rem 1.25rem;
+  color: #fff;
+}
+.privacyIcons{
+  flex-direction: row;
+  color: rgba(0, 0, 0, 0.38);
+}
+.inputPost{
+  background-color: var(--color-transparent-brown);
+  width: 90%;
+  height: 9.438rem;
+  margin: 1.375rem 1.125rem 0.438rem;
+  padding: 1rem;
+  border-radius: 21px;
+  border-style: none;
+}
+.inputPost:focus {
+  outline: none;
+  border: 2px solid var(--color-main);
+}
+#count{
+  color: rgba(0, 0, 0, 0.38);
+  transform: translateX(240px);
+  width: 30%;
+}
+#inputUbication, #inputNamePet{
+  background-color: var(--color-transparent-brown);
+  width: 75%;
+  height: 2.25rem;
+  margin: 0 0 0 1.125rem;
+  padding: 0.5rem;
+  border-radius: 21px;
+  border-style: none;
+  margin-top: -10px;
+  transform: translate(50px);
+}
+input.file {
+  position: relative;
+  text-align: right;
+  opacity: 0;
+  z-index: 2;
+  width: 0px;
+}
+.imgButton{
+  width: 15rem;
+  height: 2.75rem;
+  flex-grow: 0;
+  margin: 2.059rem 0.625rem 0 0.313rem;
+  padding: 0.625rem 4rem;
+}
+#postButton{
+  width: 15rem;
+  height: 2.75rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  background-color: #bf863f;
+}
+ul{
+  list-style: none;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  gap: 90px;
+  margin: 0 3.505rem 1.688rem 3.5rem;
+  align-items: center;
+  color: white;
+}
+
+.userName, .privacyIcons{
+  transform: translateX(100px);
+  width: 50%;
+}
+.ai-location, .sharp-pet{
+  color: var(--color-main);
+  transform: translate(20px, 20px);
+  width: 28px;
+}
+
+/* ----------------Inicio---------------- */
+.home{
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  column-gap: 1rem;
+  padding: 0rem 1rem 80px 1rem;
+}
+.posts {
+  display: grid;
+  row-gap: 20px;
+}
+.post{
+  max-width: 600px;
+  border-radius: 10px;
+  background: var(--color-transparent-brown);
+  padding: 1rem;
+}
+.postHeader{
+  display: flex;
+  justify-content: space-between;
+}
+.postAuthor, .userFollow, .userToFollow{
+  display: flex;
+  gap: 0.5rem;
+}
+.photoProfile, .userPhotoToFollow{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+.postOthers, .userOthersToFollow{
+  color: var(--color-black-transparent);
+}
+.postContent{
+  margin: 1rem 0rem;
+}
+.postPhoto{
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.postDescription{
+  margin-top: 0.2rem;
+  display: flex;
+  flex-direction: column;
+}
+.postFooter{
+  display: flex;
+  gap: 1rem;
+  color: var(--color-black-transparent);
+}
+.postInline{
+  display: inline-flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+.postIcon:hover{
+  color: var(--color-secondary);
+  fill: var(--color-secondary);
+  cursor: pointer;
+}
+.postIcon-yellow{
+  color: var(--color-main);
+}
+.more{
+  position: relative;
+  cursor: pointer;
+}
+.moreActions{
+  position: absolute;
+  top: 100%;
+  right: 0px;
+  background: var(--color-light-brown-two);
+  border-radius: 10px;
+}
+.actions{
+  padding: 1rem;
+  cursor: pointer;
+}
+.actions:hover {
+  background: var(--color-main);
+  border-radius: 10px;
+  color: #fff;
+}
+.iconMore {
+  margin-right: 0.5rem;
+}
+
+/* -------- Edit Post ----------- */
+.editDescriptionPost{
+  margin: 0px;
+  resize: none;
+  width: 100%;
+  border: 2px solid transparent;
+}
+.editDescriptionPost:focus{
+  outline: none;
+  border: 2px solid var(--color-main);
+}
+.editDescription{
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.max-characters{
+  align-self: end;
+  margin-top: 10px;
+}
+.inlineEdit{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.cancelDescription{
+  margin-top: 20px;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--color-main);
+  border: 1px solid var(--color-main);
+  font-size: 17px;
+  cursor: pointer;
+  min-width: 200px;
+  height: 58px;
+  transition: 0.2s ease;
+}
+.cancelDescription:hover{
+  background: var(--color-main);
+  color: #fff;
+}
+/* --------- User Profile -------------- */
+.homePhotoProfile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.userPhotoBackground {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.userPhoto{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  position: absolute;
+  top: 50px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.userHomeDescription{
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+.userDescription{
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+.userOthers, .userHomeOthers{
+  color: var(--color-black-transparent);
+}
+.userName, .userHomeName, .userOther, .userHomeOthers{
+  font-weight: 400;
+}
+/* --------- User Follow -------------- */
+.usersToFollow{
+  display: grid;
+  row-gap: 20px;
+}
+.userFollow{
+  justify-content: space-between;
+  padding: 0.2rem 1rem;
+  max-width: 600px;
+}
+.buttonFollow{
+  color: #fff;
+  background-color: var(--color-secondary);
+  border-radius: 30px;
+  padding: 0rem 1rem;
+  border: 0px;
+}
+.buttonFollow:hover{
+  background-color: var(--color-main);
+  transition: 0.2s ease;
+}
+.suggestionSubtitle{
+  color: var(--color-black-transparent);
+  font-size: 18px;
+  font-weight: 400;
+}
+.followContainer{
+  display: none;
+}
+/* -----------------------------Profile-------------------------- */
+
+.profile{
+  width: 100%;
+  background: white;
+}
+.profile .header{
+  width: 100%;
+  height: 200px;
+  border-bottom: 1px solid var(--color-gray);
+}
+
+/*footer*/
+.mobileFooter{
+  background: var(--color-main);
+  max-height: 72px;
+}
+.headerProfile{
+  height: 50%;
+  width: 100%;
+}
+.petNameDesktop{
+  display: none;
+  position: absolute;
+  top:380px;
+}
+.petNameMobile, .petNameDesktop{
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 30px;
+  color: black;
+}
+.mainImgProfile{
+  object-fit: cover;
+  height: 80%;
+  width: 100%;
+}
+.headerProfile .icon{
+  position: absolute;
+  top: 20px;
+  color: var(--color-gray);
+  z-index: 1;
+}
+.icon.pen{
+  left: 20px;
+  top: 10px;
+}
+.icon.signOut{
+  right: 20px;
+  top: 10px;
+}
+.circleContent{
+  position: relative;
+  right: 22px;
+  top: -60px;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.circle{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle img{
+  object-fit: cover;
+  height: 95%;
+  width:95%;
+  border-radius: 100%;
+}
+.profileDescription{
+  position: relative;
+  padding: 0 0 0 18px;
+  width: 50%;
+  height: 30%;
+}
+.followSection{
+  display: flex;
+  justify-content: space-between;
+}
+.textProfile{
+  font-weight: normal;
+  line-height: 13px;
+  font-size: 11px;
+}
+.followSection .textProfile{
+  font-size: 13px;
+  color: var(--color-gray);
+}
+.profileNumbers{
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 15px;
+}
+.profileDescriptionBox{
+  padding-top: 3px;
+}
+.profileDescription .formButton{
+  display:none;
+}
+.mainProfile{
+  height: 100%;
+  padding: 10px 18px 100px;
+}
+.profilePosts {
+  display: grid;
+  row-gap: 20px;
+  padding-bottom: 80px;
+}
+.profilePosts .post{
+  max-width: 100%;
+}
+/*------------------------Edit Profile----------------------*/
+.editProfile{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.profileForm{
+  display: grid;
+  grid-gap: 10px;
+  padding: 0px 20px 100px;
+  width: 100%;
+}
+.profileLabel{
+  display: flex;
+  flex-direction: column;
+  color: var(--color-secondary);
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.inputProfile{
+  margin-top: 5px;
+  background: var(--color-transparent-brown);
+  padding: 10px 20px;
+}
+.inputProfile:focus{
+  border: 1px solid var(--color-secondary);
+}
+.textArea{
+  height: 100px;
+}
+.spanProfile{
+  color: var(--color-gray);
+  height: 20px;
+}
+.photo{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.photoSection{
+  display: flex;
+}
+.profilePhoto{
+  max-width: 80px;
+  max-height: 80px;
+}
+.textPhoto{
+  display: flex;
+  padding-left: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.coverPhotoContent{
+  width: 100%;
+  height: 250px;
+}
+.photoSection.cover{
+  flex-direction: column;
+  justify-content: center;
+}
+.coverPhotoContent img{
+  border-radius: 0 0 30px 30px;
+}
+.buttonProfile{
+  display: flex;
+  justify-content: center;
+}
+.formProfileBox h2{
+  padding-top: 20px;
+  font-weight: bold;
+}
+.inputProfilePhoto{
+  background-color: var(--color-transparent-brown);
+  height: 50px;
+  border-radius: 30px;
+  padding: 15px;
+}
+
+/*-------------------------header mobile--------------------*/
+.mobileHeader{
+  height: 75px;
+  top: 0;
+  width: 100%;
+  padding: 10px 1rem;
+  display: flex;
+  align-items: center;
+}
+.mobileHeader .mobil-logo-post {
+  height: 50px;
+  flex: 1;
+}
+.mobileHeader .icon{
+  filter: contrast(0.5);
+}
+/*---------------------footer navMobile---------------*/
+.navMobile {
+  right: 0;
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed;
+  overflow: hidden;
+  background-color: var(--color-main);
+  bottom: 0;
+  width: 100%;
+  border-radius: 30px 30px 0 0;
+}
+.navMobile a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  cursor: pointer;
+}
+.icon.menu{
+  height: 30px;
+}
+/*-------------------------header desktop--------------------*/
+.desktopHeader{
+  display: none;
+  background: var(--color-main);
+  height: 80px;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+.headerBox{
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+.navDesktop{
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 14px 16px;
+}
+.navDesktop a{
+  padding: 14px 16px;
+}
+.icon-header{
+  width: 28px;
+}
+.active{
+  background-color: var(--color-secondary);
+  padding: 0.5rem;
+  border-radius: 30px;
+}
+/*-----------------------Footer desktop ------------------------*/
+.desktopFooter{
+  background-color: white;
+  display: none;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  color: var(--color-gray);
+}
 @keyframes animatetop {
   from {top: -300px; opacity: 0}
   to {top: 0; opacity: 1}
@@ -278,12 +922,45 @@ a:hover {
   .modal-content {
     width: 50%;
   }
+  /*profile*/
+  .circleContent{
+    justify-content: center;
+    right: 0px;
+  }
+  .circle{
+    width: 150px;
+    height: 150px;
+  }
+  .followSection{
+    padding-right: 50%;
+  }
+  /*----------------editProfile--------------*/
+  .profileForm{
+    justify-content: normal;
+    padding-right: 15%;
+    padding-left: 15%;
+  }
+  .mainProfile{
+    padding: 20px 5rem 100px;
+  }
+}
+@media only screen and (min-width: 768px){
+  .followContainer{
+    display: block;
+    max-width: 400px;
+  }
 }
 @media only screen and (min-width: 1200px){
-  .loginSection, .signUpSection, .resetPasswordSection{
+  .loginSection, .signUpSection, .resetPasswordSection, .noFoundSection{
     flex-basis: 50%;
   }
-  .signUpContainer, .loginContainer, .resetPasswordContainer{
+  .noFoundSection{
+    padding: 8rem;
+  }
+  .noFoundTitle {
+    font-size: 2.5rem;
+  }
+  .signUpContainer, .loginContainer, .resetPasswordContainer, .noFoundContainer{
     background: url(./img/background.png) no-repeat center center fixed;
     background-size: cover;
     justify-content: flex-end;
@@ -300,12 +977,150 @@ a:hover {
   .formBox:focus{
     border: 1px solid var(--color-secondary);
   }
-  /*modals*/
+  /*-------------------------modals---------------*/
   .modal-content {
     width: 30%;
   }
-}
 
+  /* Header y footer */
+  .mobileFooter, .mobileHeader{
+    display: none;
+  }
+  label.createPostSection{
+    font-size: 1.5rem;
+    padding-top: 3rem;
+    font-weight: bold;
+    text-align: left;
+    background-color:  #fff;
+    color: var(--color-main);
+  }
+  .logo-header{
+    width: 20%;
+    margin-top: -12px;
+    padding-left: 15px;
+    filter: sepia(100%) contrast(100);
+  }
+  .createPostSection{
+    width: 60%;
+  }
+  .navDesktop.ul{
+    justify-items: right;
+  }
+  .pet-desktop{
+    display: block;
+  }
+  .postForm{
+    display: grid;
+  }
+  .first-section-form{
+    width: 50%;
+  }
+  .second-section-form{
+    width: 30%;
+    justify-self: end;
+    position: absolute;
+    padding-top: 13%;
+  padding-bottom: 0;
+  }
+  #inputUbication, #inputNamePet{
+  width: 80%;
+  margin-top: -10px;
+  transform: translate(40px);
+  }
+  /*-------------------------header desktop--------------------*/
+  .desktopHeader{
+    display: block;
+  }
+  /* ---------------------- Home ---------------------- */
+  .home{
+    margin-top: 120px;
+    padding-bottom: 75px;
+  }
+  /*-------------------profile----------------*/
+  .profile .header{
+    border: 0;
+    margin-top: 80px;
+  }
+  .headerProfile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 290px;
+  }
+  .mainImgProfile{
+    border-radius: 0 0 30px 30px;
+    object-fit: cover;
+    width: 70%;
+  }
+  .headerProfile .icon{
+    display: none;
+  }
+  .petNameDesktop{
+    display: block;
+  }
+  .petNameMobile{
+    display: none;
+  }
+  .profileDescription{
+    padding-left: 15%;
+    top: 80px;
+    width: 32%;
+    height: max-content;
+  }
+  .profileDescription .formButton{
+    display:block;
+    text-align: center;
+    padding-top: 7%;
+    margin-top: 10px;
+  }
+  .textProfile {
+    line-height: 20px;
+    font-size: 15px;
+  }
+  .followSection .textProfile {
+    font-size: 15px;
+  }
+  .circleContent{
+    top:-90px;
+  }
+  .mainProfile{
+    position: absolute;
+    top: 440px;
+    left: 40%;
+    width: 45%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .followSection{
+    padding-right: 0;
+  }
+  /*---------------------footer mobile----------------*/
+  .profile .navMobile {
+    display: none;
+  }
+  .editProfile .navMobile {
+    display: none;
+  }
+  /*----------------editProfile--------------*/
+  .profileForm{
+    padding: 80px 20% 50px
+  }
+  .inputProfile{
+    border: 0;
+  }
+  .inputProfile:focus{
+    border: 1px solid var(--color-main);
+  }
+  .profileDescriptionBox{
+    padding-top: 10px;
+  }
+
+  /*-----------------------Footer desktop ------------------------*/
+  .desktopFooter {
+      display: block;
+      text-align: center;
+  }
+}
 .is-active {
   color: #bb2929;
 }
