@@ -34,24 +34,24 @@ Este proyecto se dividió básicamente en dos historias que veremos en las sigui
 * ### Durante producción
   A los usuarios se les hizo fácil crearse sus cuentas, como feedback recibimos agregar el nombre de las en una sección diferente.
 
-  ![Encuesta](lib/assets/captures/encuesta01.png)
+  ![Encuesta](lib/assets/captures/Encuesta01.png)
 * ### Encuesta con producto finalizado
-  ![Encuesta](lib/assets/captures/encuesta02.png)
+  ![Encuesta](lib/assets/captures/Encuesta02.png)
 
 ## 5. Producto final
 
 ### Versión mobile
 * #### Home
-  ![Mobile](lib/assets/captures/mobile01.jpeg)
+  <img src="lib/assets/captures/mobile01.jpeg" width=230px height=450px>
 
 * #### Crear post
-  ![Mobile](lib/assets/captures/mobile02.jpeg)
+  <img src="lib/assets/captures/mobile02.jpeg" width=230px height=450px>
 
 * #### Perfil
-  ![Mobile](lib/assets/captures/mobile03.jpeg)
+  <img src="lib/assets/captures/mobile03.jpeg" width=230px height=450px>
 
 * #### Editar perfil
-  ![Mobile](lib/assets/captures/mobile04.jpeg)
+  <img src="lib/assets/captures/mobile04.jpeg" width=230px height=450px>
 
 ### Versión desktop
 * #### Home
