@@ -38,6 +38,20 @@ Este proyecto se dividió básicamente en dos historias que veremos en las sigui
 * ### Encuesta con producto finalizado
   ![Encuesta](lib/assets/captures/Encuesta02.png)
 
+* ### Final
+  Se les hizo crear una cuenta con correo electrónico y/o gmail desde un inicio para que puedan interactuar con la plataforma y realicen las siguientes tareas :
+
+  - [] Ver los posts en home
+  - [] Ver perfil y editar los datos del perfil
+  - [] Crear post, editar y eliminar
+
+  A continuación detallamos el feedback y cómo lo solucionamos :
+   
+  - [] No redirigía a home cuando se autenticaba con google, para ello agregamos una función que faltaba.
+  - [] El texto de un modal se movió, lo arreglamos modificando los estilos css.
+  - [] Cambiamos una descripción de botón de "Editar a perfil" a "Guardar datos".
+
+  
 ## 5. Producto final
 
 ### Versión mobile
@@ -69,3 +83,4 @@ Este proyecto se dividió básicamente en dos historias que veremos en las sigui
 
 
 * [Link petstagram](https://lab-petstagram.web.app/)
+* [Link petstagram](https://lab-petstagram.firebaseapp.com/)
