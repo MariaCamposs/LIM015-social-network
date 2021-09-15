@@ -27,9 +27,9 @@ jobs:
         args: deploy --only hosting --project lab-petstagram
       env:
         FIREBASE_TOKEN: '${{ secrets.FIREBASE_TOKEN }}'
-    # - uses: FirebaseExtended/action-hosting-deploy@v0
-    #   with:
-    #     repoToken: '${{ secrets.GITHUB_TOKEN }}'
-    #     firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_LAB_PETSTAGRAM }}'
-    #     channelId: live
-    #     projectId: lab-petstagram
+    - uses: FirebaseExtended/action-hosting-deploy@v0
+      with:
+        repoToken: '${{ secrets.GITHUB_TOKEN }}'
+        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_LAB_PETSTAGRAM }}'
+        channelId: live
+        projectId: lab-petstagram
